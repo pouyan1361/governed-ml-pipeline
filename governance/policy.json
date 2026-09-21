@@ -1,0 +1,21 @@
+{
+  "policy_name": "Credit Model Deployment Policy",
+  "policy_version": "1.0",
+  "owner": "Model Risk Officer (second line of defense)",
+  "approved_by": "AI Risk Committee",
+  "effective_date": "2026-09-21",
+  "rationale": "Thresholds were set BEFORE any model results were seen. Changing them requires committee approval, enforced through CODEOWNERS review.",
+
+  "pii_columns": ["applicant_name", "ssn", "email", "street_address", "zip", "birth_date"],
+  "leakage_columns": ["collections_flag_post_decision"],
+  "max_feature_label_correlation": 0.60,
+
+  "protected_attribute": "region",
+  "prohibited_features": ["region", "applicant_name", "ssn", "email", "street_address", "zip", "birth_date", "age"],
+
+  "min_overall_auc": 0.80,
+  "min_subgroup_auc": 0.78,
+  "min_subgroup_tpr": 0.70,
+  "min_approval_disparity_ratio": 0.80,
+  "min_tpr_ratio": 0.80
+}

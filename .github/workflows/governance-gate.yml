@@ -1,0 +1,50 @@
+# The governance gate, automated.
+# Runs on every pull request to main and every push to main.
+# A red X on a pull request means the model may not ship.
+
+name: Governance Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  governance-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: "Stage A: Policy integrity (separation of duties)"
+        if: github.event_name == 'pull_request'
+        run: python ci/check_policy_unchanged.py ${{ github.event.pull_request.base.sha }}
+
+      - name: "Stage B: Data and gate tests"
+        run: python -m pytest -q tests/
+
+      - name: "Stage C: Train, evaluate, gate, model card"
+        run: python run_pipeline.py --config model_config.json --skip-tests
+
+      - name: "Stage D: Upload evidence (runs even if the gate blocked)"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: governance-evidence
+          path: artifacts/
+          if-no-files-found: warn

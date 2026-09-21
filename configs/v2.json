@@ -1,0 +1,9 @@
+{
+  "model_version": "v2",
+  "author": "Data Science Team",
+  "description": "Gradient boosting plus the vendor area_risk_score. Higher overall AUC than v1.",
+  "model_type": "gradient_boosting",
+  "params": {"random_state": 622},
+  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount", "area_risk_score"],
+  "decision_threshold": 0.5
+}

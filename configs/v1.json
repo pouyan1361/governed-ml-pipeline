@@ -1,0 +1,9 @@
+{
+  "model_version": "v1",
+  "author": "Data Science Team",
+  "description": "Baseline logistic regression on applicant finances only.",
+  "model_type": "logistic_regression",
+  "params": {},
+  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
+  "decision_threshold": 0.5
+}
