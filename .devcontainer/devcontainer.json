@@ -1,6 +1,6 @@
 {
   "name": "BANA 690A Governed ML Pipeline",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "hostRequirements": { "cpus": 2 },
   "postCreateCommand": "pip install -r requirements.txt && echo 'Setup complete. Run: python -m pytest -q tests/'",
   "customizations": {
