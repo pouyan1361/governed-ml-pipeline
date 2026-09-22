@@ -14,7 +14,7 @@ Usage in CI:   python ci/check_policy_unchanged.py <base_commit_sha>
 import subprocess
 import sys
 
-PROTECTED = ["governance/", "tests/", "src/gate.py", "ci/", ".github/"]
+PROTECTED = ["governance/", "tests/", "src/gate.py", "ci/", ".github/", ".devcontainer/"]
 
 
 def changed_files(base):

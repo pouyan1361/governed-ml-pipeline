@@ -2,6 +2,7 @@
 # Any change to these folders requires approval from the policy owner.
 # Policy owner: pouyan1361 (course instructor).
 
-/governance/   @pouyan1361
-/.github/      @pouyan1361
-/ci/           @pouyan1361
+/governance/     @pouyan1361
+/.github/        @pouyan1361
+/ci/             @pouyan1361
+/.devcontainer/  @pouyan1361
