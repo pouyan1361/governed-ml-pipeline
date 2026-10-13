@@ -1,6 +1,6 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
+  "author": "Kathlyn Miller Francis",
   "description": "Describe your model and why it should be deployed.",
   "model_type": "logistic_regression",
   "params": {},
