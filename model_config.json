@@ -1,9 +1,14 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
+  "author": "Julie Loyez",
   "description": "Describe your model and why it should be deployed.",
   "model_type": "logistic_regression",
-  "params": {},
+  "params": {
+    "C": 1.0,
+    "penalty": "l2",
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
   "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
   "decision_threshold": 0.5
 }
