@@ -1,7 +1,7 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
+  "author": "Manchi Hsu",
+  "description": "Logistic regression using financial and credit history features to predict loan repayment.",
   "model_type": "logistic_regression",
   "params": {},
   "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
