@@ -1,9 +1,9 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
+  "author": "Brandon Das",
+  "description": "Logistic regression on applicant finances plus loan-to-income, with mild regularization (C=0.1). Excludes the vendor area_risk_score because it acts as a proxy for region.",
   "model_type": "logistic_regression",
-  "params": {},
-  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
+  "params": {"C": 0.1},
+  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount", "loan_to_income"],
   "decision_threshold": 0.5
 }
