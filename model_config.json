@@ -1,9 +1,9 @@
-{
-  "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
-  "model_type": "logistic_regression",
-  "params": {},
-  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
-  "decision_threshold": 0.5
-}
+   {
+     "model_version": "v3",
+     "author": "Brian Pak",
+     "description": "Logistic regression on applicant financial features plus log_income. Highest AUC (0.848) among models that passed the gate. Excludes area_risk_score, which acted as a proxy for region and cut rural approvals in v2.",
+     "model_type": "logistic_regression",
+     "params": {},
+      "features": ["annual_income" , "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount", "log_income"],
+     "decision_threshold": 0.5
+   }
