@@ -1,9 +1,9 @@
-{
-  "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
-  "model_type": "logistic_regression",
-  "params": {},
-  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
-  "decision_threshold": 0.5
-}
+   {
+     "model_version": "v3",
+     "author": "Sabrina Quevedo",
+     "description": "Logistic regression on applicant finances plus the engineered log_income and loan_to_income ratios. No area_risk_score.",
+     "model_type": "logistic_regression",
+     "params": {},
+     "features": ["annual_income", "log_income", "debt_to_income", "loan_to_income", "loan_amount", "credit_history_years", "delinquencies_2y", "employment_years"],
+     "decision_threshold": 0.5
+   }
