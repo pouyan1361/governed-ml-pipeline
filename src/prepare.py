@@ -34,32 +34,19 @@ def load_policy(path=POLICY_PATH):
 
 def load_raw(path=RAW_PATH):
     return pd.read_csv(path)
-
-
 def drop_identifiers(df):
-    """Remove columns that identify a person.
-
-    Previous analyst's note: "Dropped name, SSN, email, and street address.
-    Kept zip and birth_date because they are useful for the model."
-
-    LAB 1, TASK A: the PII test fails. Read the policy's pii_columns list and
-    think about quasi-identifiers: zip code plus birth date is enough to
-    re-identify most people, even without a name.
-    """
-    direct_identifiers = ["applicant_name", "ssn", "email", "street_address"]
-    return df.drop(columns=direct_identifiers)
+    policy = load_policy()
+    to_drop = [c for c in policy["pii_columns"]
+               if c in df.columns]
+    return df.drop(columns=to_drop)
 
 
 def remove_leakage(df):
-    """Remove columns that would not exist at the moment of the lending decision.
+    policy = load_policy()
+    to_drop = [c for c in policy["leakage_columns"]
+               if c in df.columns]
+    return df.drop(columns=to_drop)
 
-    LAB 1, TASK B: the leakage test fails. A column recorded AFTER the decision
-    (did the loan go to collections?) lets the model 'see the future'. It makes
-    test scores look brilliant and the deployed model useless.
-    The policy lists known leakage columns under leakage_columns.
-    """
-    # TODO: this function currently does nothing.
-    return df
 
 
 def impute_missing(df):

@@ -1,8 +1,8 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
+  "author": "md abdus salam",
   "description": "Describe your model and why it should be deployed.",
-  "model_type": "logistic_regression",
+  "model_type": "random_forest",
   "params": {},
   "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
   "decision_threshold": 0.5
