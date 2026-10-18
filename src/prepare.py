@@ -37,6 +37,9 @@ def load_raw(path=RAW_PATH):
 
 
 def drop_identifiers(df):
+    policy = load_policy()
+    to_drop = [c for c in policy["pii_columns"] if c in df.columns]
+    return df.drop(columns=to_drop)
     """Remove columns that identify a person.
 
     Previous analyst's note: "Dropped name, SSN, email, and street address.
@@ -51,6 +54,9 @@ def drop_identifiers(df):
 
 
 def remove_leakage(df):
+    policy = load_policy()
+    to_drop = [c for c in policy["leakage_columns"] if c in df.columns]
+    return df.drop(columns=to_drop)
     """Remove columns that would not exist at the moment of the lending decision.
 
     LAB 1, TASK B: the leakage test fails. A column recorded AFTER the decision
