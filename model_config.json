@@ -1,9 +1,9 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
+  "author": "Myong Brian Pak",
+ "description": "Logistic regression on financial features only (no vendor score, no region); passes all gate checks.",
   "model_type": "logistic_regression",
   "params": {},
-  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
+  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount","log_income", "loan_to_income"],
   "decision_threshold": 0.5
 }
