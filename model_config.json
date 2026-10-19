@@ -1,9 +1,9 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
+  "author": "Kelly A",
+  "description": "Logistic Regression w/ governance pass",
   "model_type": "logistic_regression",
   "params": {},
-  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
+  "features": ["log_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_to_income"],
   "decision_threshold": 0.5
 }
