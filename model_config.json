@@ -1,9 +1,9 @@
 {
   "model_version": "v3",
-  "author": "YOUR NAME HERE",
-  "description": "Describe your model and why it should be deployed.",
+  "author": "Brian Pak ",
+  "description": "Logistic regression on 6 financial features plus log_income and loan_to_income. No area_risk_score. AUC 0.8494, disparity 0.892, PASS.",
   "model_type": "logistic_regression",
   "params": {},
-  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount"],
+  "features": ["annual_income", "debt_to_income", "credit_history_years", "delinquencies_2y", "employment_years", "loan_amount", "log_income", "loan_to_income"],
   "decision_threshold": 0.5
 }

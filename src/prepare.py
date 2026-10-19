@@ -46,8 +46,16 @@ def drop_identifiers(df):
     think about quasi-identifiers: zip code plus birth date is enough to
     re-identify most people, even without a name.
     """
-    direct_identifiers = ["applicant_name", "ssn", "email", "street_address"]
-    return df.drop(columns=direct_identifiers)
+    # direct_identifiers = ["applicant_name", "ssn", "email", "street_address"]
+    # return df.drop(columns=direct_identifiers)
+
+    policy = load_policy()
+    to_drop = [c for c in policy["pii_columns"]
+               if c in df.columns]
+    return df.drop(columns=to_drop)
+
+
+
 
 
 def remove_leakage(df):
@@ -59,7 +67,13 @@ def remove_leakage(df):
     The policy lists known leakage columns under leakage_columns.
     """
     # TODO: this function currently does nothing.
-    return df
+    # return df
+
+    policy = load_policy()
+    to_drop = [c for c in policy["leakage_columns"]
+               if c in df.columns]
+    return df.drop(columns=to_drop)
+
 
 
 def impute_missing(df):
